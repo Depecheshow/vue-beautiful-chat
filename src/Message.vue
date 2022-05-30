@@ -27,7 +27,7 @@
         :message-styling="messageStyling"
         @remove="$emit('remove')"
       >
-        <template v-slot:default="scopedProps">
+        <template #default="scopedProps">
           <slot
             name="text-message-body"
             :message="scopedProps.message"
@@ -37,7 +37,7 @@
           >
           </slot>
         </template>
-        <template v-slot:text-message-toolbox="scopedProps">
+        <template #text-message-toolbox="scopedProps">
           <slot name="text-message-toolbox" :message="scopedProps.message" :me="scopedProps.me">
           </slot>
         </template>

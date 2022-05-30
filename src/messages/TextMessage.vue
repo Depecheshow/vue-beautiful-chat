@@ -1,20 +1,18 @@
 <template>
   <div class="sc-message--text" :style="messageColors">
-    <template>
-      <div class="sc-message--toolbox" :style="{background: messageColors.backgroundColor}">
-        <button v-if="showEdition && me && message.id" :disabled="isEditing" @click="edit">
-          <IconBase :color="isEditing ? 'black' : messageColors.color" width="10" icon-name="edit">
-            <IconEdit />
-          </IconBase>
-        </button>
-        <button v-if="showDeletion && me && message.id" @click="$emit('remove')">
-          <IconBase :color="messageColors.color" width="10" icon-name="remove">
-            <IconCross />
-          </IconBase>
-        </button>
-        <slot name="text-message-toolbox" :message="message" :me="me"> </slot>
-      </div>
-    </template>
+    <div class="sc-message--toolbox" :style="{background: messageColors.backgroundColor}">
+      <button v-if="showEdition && me && message.id" :disabled="isEditing" @click="edit">
+        <IconBase :color="isEditing ? 'black' : messageColors.color" width="10" icon-name="edit">
+          <IconEdit />
+        </IconBase>
+      </button>
+      <button v-if="showDeletion && me && message.id" @click="$emit('remove')">
+        <IconBase :color="messageColors.color" width="10" icon-name="remove">
+          <IconCross />
+        </IconBase>
+      </button>
+      <slot name="text-message-toolbox" :message="message" :me="me"> </slot>
+    </div>
     <slot :message="message" :messageText="messageText" :messageColors="messageColors" :me="me">
       <p class="sc-message--text-content" v-html="messageText"></p>
       <p v-if="message.data.meta" class="sc-message--meta" :style="{color: messageColors.color}">

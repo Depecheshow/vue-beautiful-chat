@@ -14,10 +14,10 @@
       :message-styling="messageStyling"
       @remove="$emit('remove', message)"
     >
-      <template v-slot:user-avatar="scopedProps">
+      <template #user-avatar="scopedProps">
         <slot name="user-avatar" :user="scopedProps.user" :message="scopedProps.message"> </slot>
       </template>
-      <template v-slot:text-message-body="scopedProps">
+      <template #text-message-body="scopedProps">
         <slot
           name="text-message-body"
           :message="scopedProps.message"
@@ -27,10 +27,10 @@
         >
         </slot>
       </template>
-      <template v-slot:system-message-body="scopedProps">
+      <template #system-message-body="scopedProps">
         <slot name="system-message-body" :message="scopedProps.message"> </slot>
       </template>
-      <template v-slot:text-message-toolbox="scopedProps">
+      <template #text-message-toolbox="scopedProps">
         <slot name="text-message-toolbox" :message="scopedProps.message" :me="scopedProps.me">
         </slot>
       </template>
