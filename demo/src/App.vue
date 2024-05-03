@@ -51,9 +51,7 @@
         </p>
       </template>
       <template #system-message-body="{message}"> [System]: {{ message.text }} </template>
-      <template #user-input-prepend>
-        <slot name="user-input-prepend"> </slot>
-      </template>
+      <template #user-input-prepend><slot name="user-input-prepend"> </slot></template>
     </beautiful-chat>
     <p class="text-center toggle">
       <a v-if="!isChatOpen" :style="{color: linkColor}" href="#" @click.prevent="openChat()"

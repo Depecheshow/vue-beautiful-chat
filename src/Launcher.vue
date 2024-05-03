@@ -56,6 +56,7 @@
         <slot name="text-message-toolbox" :message="scopedProps.message" :me="scopedProps.me">
         </slot>
       </template>
+      <template #user-input-prepend><slot name="user-input-prepend"> </slot></template>
     </ChatWindow>
   </div>
 </template>
