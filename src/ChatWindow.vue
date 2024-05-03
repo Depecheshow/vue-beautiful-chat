@@ -54,7 +54,7 @@
       @edit="$emit('edit', $event)"
     >
       <template #prepend>
-        <slot name="user-input-prepend"></slot>
+        <slot name="user-input-prepend"> </slot>
       </template>
     </UserInput>
   </div>
