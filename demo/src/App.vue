@@ -25,7 +25,7 @@
       @edit="editMessage"
       @remove="removeMessage"
     >
-      <template v-slot:text-message-toolbox="scopedProps">
+      <template #text-message-toolbox="scopedProps">
         <button
           v-if="!scopedProps.me && scopedProps.message.type === 'text'"
           @click.prevent="like(scopedProps.message.id)"
@@ -33,7 +33,7 @@
           👍
         </button>
       </template>
-      <template v-slot:text-message-body="scopedProps">
+      <template #text-message-body="scopedProps">
         <p class="sc-message--text-content" v-html="scopedProps.messageText"></p>
         <p
           v-if="scopedProps.message.data.meta"
@@ -50,7 +50,10 @@
           <template v-if="scopedProps.message.liked">👍</template>
         </p>
       </template>
-      <template v-slot:system-message-body="{message}"> [System]: {{ message.text }} </template>
+      <template #system-message-body="{message}"> [System]: {{ message.text }} </template>
+      <template #user-input-prepend>
+        <slot name="user-input-prepend"> </slot>
+      </template>
     </beautiful-chat>
     <p class="text-center toggle">
       <a v-if="!isChatOpen" :style="{color: linkColor}" href="#" @click.prevent="openChat()"
@@ -183,8 +186,7 @@ export default {
     showStylingInfo() {
       this.$modal.show('dialog', {
         title: 'Info',
-        text:
-          'You can use *word* to <strong>boldify</strong>, /word/ to <em>emphasize</em>, _word_ to <u>underline</u>, `code` to <code>write = code;</code>, ~this~ to <del>delete</del> and ^sup^ or ¡sub¡ to write <sup>sup</sup> and <sub>sub</sub>'
+        text: 'You can use *word* to <strong>boldify</strong>, /word/ to <em>emphasize</em>, _word_ to <u>underline</u>, `code` to <code>write = code;</code>, ~this~ to <del>delete</del> and ^sup^ or ¡sub¡ to write <sup>sup</sup> and <sub>sub</sub>'
       })
     },
     messageStylingToggled(e) {
