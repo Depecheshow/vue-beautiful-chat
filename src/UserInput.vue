@@ -26,6 +26,7 @@
       :class="{active: inputActive}"
       :style="{background: colors.userInput.bg}"
     >
+      <slot name="prepend"></slot>
       <div
         ref="userInput"
         role="button"

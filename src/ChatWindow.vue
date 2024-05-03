@@ -52,7 +52,11 @@
       :colors="colors"
       @onType="$emit('onType')"
       @edit="$emit('edit', $event)"
-    />
+    >
+      <template #prepend>
+        <slot name="prepend"></slot>
+      </template>
+    </UserInput>
   </div>
 </template>
 
