@@ -23,6 +23,7 @@
       :disable-user-list-toggle="false"
       @onType="handleOnType"
       @edit="editMessage"
+      @cancelFile="cancelFile"
       @remove="removeMessage"
     >
       <template #text-message-toolbox="scopedProps">
@@ -198,6 +199,9 @@ export default {
       const m = this.messageList.find((m) => m.id === message.id)
       m.isEdited = true
       m.data.text = message.data.text
+    },
+    cancelFile() {
+      this.$root.$emit('cancelFile')
     },
     removeMessage(message) {
       if (confirm('Delete?')) {

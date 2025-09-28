@@ -176,6 +176,7 @@ export default {
   methods: {
     cancelFile() {
       this.file = null
+      this.$emit('cancelFile')
     },
     setInputActive(onoff) {
       this.inputActive = onoff

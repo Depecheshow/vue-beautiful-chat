@@ -52,6 +52,7 @@
       :colors="colors"
       @onType="$emit('onType')"
       @edit="$emit('edit', $event)"
+      @cancelFile="$emit('cancelFile')"
     >
       <template #prepend>
         <slot name="user-input-prepend"> </slot>

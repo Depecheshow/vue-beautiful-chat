@@ -31,6 +31,7 @@
       @scrollToTop="$emit('scrollToTop')"
       @onType="$emit('onType')"
       @edit="$emit('edit', $event)"
+      @cancelFile="$emit('cancelFile')"
       @remove="$emit('remove', $event)"
     >
       <template #header>
