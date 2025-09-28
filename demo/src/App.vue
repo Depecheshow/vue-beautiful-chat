@@ -24,6 +24,7 @@
       @onType="handleOnType"
       @edit="editMessage"
       @cancelFile="cancelFile"
+      @fileAttached="fileAttached"
       @remove="removeMessage"
     >
       <template #text-message-toolbox="scopedProps">
@@ -202,6 +203,9 @@ export default {
     },
     cancelFile() {
       this.$root.$emit('cancelFile')
+    },
+    fileAttached() {
+      this.$root.$emit('fileAttached')
     },
     removeMessage(message) {
       if (confirm('Delete?')) {

@@ -279,6 +279,7 @@ export default {
     },
     _handleFileSubmit(file) {
       this.file = file
+      this.$emit('fileAttached')
     },
     _editFinish() {
       store.setState('editMessage', null)

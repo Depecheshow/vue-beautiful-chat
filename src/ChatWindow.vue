@@ -53,6 +53,7 @@
       @onType="$emit('onType')"
       @edit="$emit('edit', $event)"
       @cancelFile="$emit('cancelFile')"
+      @fileAttached="$emit('fileAttached')"
     >
       <template #prepend>
         <slot name="user-input-prepend"> </slot>

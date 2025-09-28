@@ -32,6 +32,7 @@
       @onType="$emit('onType')"
       @edit="$emit('edit', $event)"
       @cancelFile="$emit('cancelFile')"
+      @fileAttached="$emit('fileAttached')"
       @remove="$emit('remove', $event)"
     >
       <template #header>
